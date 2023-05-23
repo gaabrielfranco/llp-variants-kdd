@@ -1,4 +1,4 @@
-# kdd-variants-llp
+# Dependence and Model Selection in LLP: The Problem of Variants
 Repository for reproducing the results of the paper "Dependence and Model Selection in LLP: The Problem of Variants" from KDD23
 
 The Split-Bag methods proposed at this paper are implemented at [llp-learn](https://github.com/gaabrielfranco/llp-learn)
