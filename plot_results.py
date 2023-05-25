@@ -34,9 +34,9 @@ def plot_winning_figure(winning_df, filename, plot_type=None):
     }
 
     if plot_type == "algorithms":
-        fig, axes = plt.subplots(nrows=1, ncols=len(winning_df.index.levels[0]), sharey=True, gridspec_kw={"width_ratios": [2, 3, 3]}, figsize=(3.5, 3.5)) # width, height
+        fig, axes = plt.subplots(nrows=1, ncols=len(winning_df.index.levels[0]), sharey=True, gridspec_kw={"width_ratios": [2, 3, 3]}, figsize=(3.5, 2)) # width, height
     else:
-        fig, axes = plt.subplots(nrows=1, ncols=len(winning_df.index.levels[0]), sharey=True, figsize=(3.5, 3.5)) # width, height
+        fig, axes = plt.subplots(nrows=1, ncols=len(winning_df.index.levels[0]), sharey=True, figsize=(3.5, 2)) # width, height
     if plot_type == "variants":
         it_array = list(winning_df.index.levels[0])
         it_array[2], it_array[3] = it_array[3], it_array[2]
