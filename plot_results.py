@@ -645,11 +645,11 @@ elif args.plot_type == "effect-sizes":
     plt.rcParams['axes.facecolor'] = 'white'
     plt.rc('font', size=6)
     
-    _, ax = plt.subplots(figsize=(3.5, 2))
+    _, ax = plt.subplots(figsize=(3.5, 1.5))
 
-    g = sns.histplot(diffs, kde=True, ax=ax)
+    g = sns.histplot(diffs, kde=True, ax=ax, kde_kws={'bw_adjust': 0.2}, stat="count")
     plt.xlabel("Difference in accuracy")
-    plt.ylabel("Density")
+    plt.ylabel("Count")
     plt.tight_layout()
     plt.savefig("plots/effect-sizes-dist.pdf", bbox_inches='tight', pad_inches=0.01, dpi=800)
     plt.close()
