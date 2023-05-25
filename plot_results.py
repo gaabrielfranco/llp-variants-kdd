@@ -478,6 +478,12 @@ elif args.plot_type == "winning-figures":
     plot_winning_figure(winning_df_algorithm_sm, filename, plot_type="algorithms")
 
 elif args.plot_type == "hyperparams-plots":
+    matplotlib.rcParams['pdf.fonttype'] = 42
+    matplotlib.rcParams['ps.fonttype'] = 42
+    matplotlib.style.use('ggplot')
+    plt.rcParams['axes.facecolor'] = 'white'
+    plt.rc('font', size=6)
+
     # Hyperparams plot (alter-SVM)
     final_results_alter_svm = deepcopy(final_results[final_results.model == "Alter-SVM"])
     final_results_alter_svm["C"] = final_results_alter_svm.best_hyperparams.apply(lambda x: x["C"])
@@ -645,7 +651,7 @@ elif args.plot_type == "effect-sizes":
     plt.rcParams['axes.facecolor'] = 'white'
     plt.rc('font', size=6)
     
-    _, ax = plt.subplots(figsize=(3.5, 1.5))
+    _, ax = plt.subplots(figsize=(3.5, 2))
 
     g = sns.histplot(diffs, kde=True, ax=ax, kde_kws={'bw_adjust': 0.2}, stat="count")
     plt.xlabel("Difference in accuracy")
