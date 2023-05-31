@@ -419,21 +419,20 @@ if args.plot_type == "winning-figures" or args.plot_type == "table-results" or a
     winning_df_kfold["split_method"] = split_method_map["split-bag-k-fold"]
 
 if args.plot_type == "check-n-experiments":
-    total_experiments = len(final_results)
-    print("Total experiments: ", total_experiments)
+    total_models = len(final_results)
+    print("Total trained models: ", total_models)
     for model in final_results["model"].unique():
         print(model, len(final_results[final_results["model"] == model]))
-
-    x = final_results[final_results["model"] == "Alter-SVM"]
-    for dataset in x.dataset.unique():
-        y = x[x["dataset"] == dataset]
-        if y.split_method.nunique() != 3:
-            print(dataset, y.split_method.unique())
-
-    for base_dataset in x["base_dataset"].unique():
-        y = x[x["base_dataset"] == base_dataset]
-        if y.dataset_variant.nunique() != 3:
-            print(base_dataset, y.dataset_variant.unique())
+    print("")
+    x_alter_svm = final_results[final_results["model"] == "Alter-SVM"]
+    print("Alter-SVM number of datasets:", len(x_alter_svm["dataset"].unique()))
+    print("Alter-SVM split methods used:", x_alter_svm["split_method"].unique())
+    print("")
+    # Checking number of experiments
+    n_experiments_df = final_results.groupby(["model", "dataset", "split_method"]).size().reset_index(name='counts').sort_values(by="counts", ascending=False)
+    print("Total number of experiments:", len(n_experiments_df))
+    print("Experiments per split_method")
+    print(n_experiments_df["split_method"].value_counts())
 
 elif args.plot_type == "winning-figures":
     winning_df = pd.concat([winning_df_bootstrap, winning_df_shuffle, winning_df_kfold], ignore_index=True)
