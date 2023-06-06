@@ -131,19 +131,6 @@ base_datasets_type = {
     "Census-KDD": "Tabular",
 }
 
-# # # TODO: fix
-# base_datasets_gap = {
-#     "CIFAR-10-Grey-Frog-Truck": "<= 0.1",
-#     "CIFAR-10-Grey-Deer-Ship": "> 0.1 and < 0.2",
-#     "CIFAR-10-Grey-Airplane-Automobile": ">= 0.2",
-#     "CIFAR-10-Grey-Airplane-Frog": "<= 0.1",
-#     "CIFAR-10-Grey-Frog-Ship": "<= 0.1",
-#     "CIFAR-10-Grey-Bird-Ship": "> 0.1 and < 0.2",
-#     "CIFAR-10-Grey-Bird-Cat": ">= 0.2",
-#     "CIFAR-10-Grey-Airplane-Horse": ">= 0.2",
-#     "CIFAR-10-Grey-Cat-Truck": "> 0.1 and < 0.2"
-# }
-
 dataset_map = {
     "cifar-10-grey-airplane-automobile-hard-3bags-cluster-kmeans-3-3folds": "CIFAR-10-Grey-Airplane-Automobile (hard)\n",
     "cifar-10-grey-airplane-automobile-intermediate-3bags-cluster-kmeans-3-3folds" : "CIFAR-10-Grey-Airplane-Automobile\n (intermediate)",
