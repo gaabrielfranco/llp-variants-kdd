@@ -19,6 +19,11 @@ git clone https://github.com/giorgiop/almostnolabel.git
 
 [^1]: Patrini, Giorgio, et al. "(Almost) no label no cry." Advances in Neural Information Processing Systems 27 (2014).
 
+To install the R libraries:
+```sh
+install_r_libraries.py
+```
+
 ## Run an single experiment
 
 ```sh
